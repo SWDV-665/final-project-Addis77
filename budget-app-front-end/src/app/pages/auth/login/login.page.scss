@@ -1,0 +1,26 @@
+.float-right{
+    float: right;
+}
+form{
+    top: 31%;
+    position: relative;
+    padding: 15px;
+    background: var(--ion-color-secondary);
+    border-radius: 13px 13px 0px 0px;
+    height: 60%;
+}
+ion-item{
+    --background:var(--ion-color-secondary);
+}
+ion-content{
+    --background: #194648;
+}
+.app-title{
+    color: #fff;
+    text-align: center;
+    position: relative;
+    display: flow-root;
+    top: 20%;
+    overflow: hidden;
+    font-size: 50px;
+}

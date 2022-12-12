@@ -1,0 +1,28 @@
+
+<ion-content>
+  <ion-label class="app-title">Budget App</ion-label>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <ion-item lines="full">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="name" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input formControlName="password" type="password" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Confirm Password</ion-label>
+      <ion-input formControlName="confirm_password" type="password" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="success" expand="block">Sign Up</ion-button>
+        <ion-button type="button" [routerLink]="['/login']" color="primary" expand="block">Already an Account?</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary">
+    <ion-title color="primary">Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary">
+
+  <div align="center">
+    <ion-avatar>
+      <img src="assets/imgs/img.png" />
+    </ion-avatar>
+    <ion-label color="primary">{{ (authService.currentUser | async)?.name }}</ion-label>
+  </div>
+
+  <ion-list>
+    <ion-item lines="full" detail routerLink="/tabs/profile">
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+      <ion-label>
+        Peofile
+      </ion-label>
+    </ion-item>
+    <ion-item lines="full" detail routerLink="/tabs/change-password">
+      <ion-icon slot="start" name="key-outline"></ion-icon>
+      <ion-label>
+        Change Password
+      </ion-label>
+    </ion-item>
+    
+  </ion-list>
+
+  <ion-button fill="clear" [routerLink]="['/login']" class="ion-margin" color="danger">
+    <ion-icon name="log-out" slot="start"></ion-icon> Logout
+  </ion-button>
+
+</ion-content>

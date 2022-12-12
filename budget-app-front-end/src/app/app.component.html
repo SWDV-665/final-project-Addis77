@@ -1,0 +1,28 @@
+<ion-app>
+  <ion-menu side="start" contentId="content">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title class="menu-title">Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content color="primary">
+      <ion-list class="bg-primary">
+        <ion-menu-toggle auto-hide="true">
+          <ion-item routerLink="/tabs/home" color="primary" routerDirection="forward">
+            <ion-label>Home</ion-label>
+          </ion-item>
+          <ion-item routerLink="/tabs/expenses" color="primary" routerDirection="forward">
+            <ion-label>Expenses</ion-label>
+          </ion-item>
+          <ion-item routerLink="/tabs/income" color="primary" routerDirection="forward">
+            <ion-label>Income</ion-label>
+          </ion-item>
+          <ion-item routerLink="/tabs/categories" color="primary" routerDirection="forward">
+            <ion-label>Categories</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="content"></ion-router-outlet>
+</ion-app>
