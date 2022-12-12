@@ -1,0 +1,26 @@
+<ion-header class="ion-no-border">
+  <app-header title="Categories"></app-header>
+  </ion-header>
+  <ion-content color="secondary" fullscreen>
+
+    <ion-list class="transactions" *ngIf="Categories?.length > 0">
+      <ng-container *ngFor="let category of Categories">
+      <ion-item-sliding>
+        <ion-item lines="full">
+          <ion-label>
+            <ion-text color="primary">{{category?.name}}</ion-text>
+          </ion-label>
+        </ion-item>
+        <ion-item-options>
+          <ion-icon class="trash" name="trash" slot="end" (click)="deleteIncome(category)"></ion-icon>
+          <ion-icon class="edit" name="create-outline" (click)="openModal('edit',category)" slot="end"></ion-icon>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ng-container>
+    </ion-list>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="fab-cls">
+      <ion-fab-button (click)="openModal('add','')">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-content>

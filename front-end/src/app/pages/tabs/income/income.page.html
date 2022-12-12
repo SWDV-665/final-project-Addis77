@@ -1,0 +1,29 @@
+<ion-header class="ion-no-border">
+  <app-header title="Income"></app-header>
+  </ion-header>
+  <ion-content color="secondary" fullscreen>
+
+    <ion-list class="transactions" *ngIf="Incomes?.length > 0">
+      <ng-container *ngFor="let income of Incomes">
+      <ion-item-sliding>
+        <ion-item lines="full">
+          <ion-label>
+            <ion-text color="primary">{{income?.detail}}</ion-text>
+          </ion-label>
+          <ion-text slot="end" color="primary">
+            ${{income?.amount}}
+          </ion-text>
+        </ion-item>
+        <ion-item-options>
+          <ion-icon class="trash" name="trash" slot="end" (click)="deleteIncome(income)"></ion-icon>
+          <ion-icon class="edit" name="create-outline" (click)="openModal('edit',income)" slot="end"></ion-icon>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ng-container>
+    </ion-list>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="fab-cls">
+      <ion-fab-button (click)="openModal('add','')">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-content>
